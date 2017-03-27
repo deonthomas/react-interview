@@ -45,7 +45,7 @@ class App extends Component {
        <CartSummary cart={this.state.cart}/>
         <div className="row">
           <div className="col s6">
-             <ShoeList shoes={this.state.shoes}/>
+             <ShoeList shoes={this.state.shoes} onShoeSelect={this.handleShoeSelect}/>
           </div>
         </div>
       </div>
