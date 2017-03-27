@@ -2,12 +2,20 @@ import React from 'react';
 
 const Shoe = (props) => (
  
-        <div className="card-content">
-          <span>{props.brand}</span>
-          <span>{props.title}</span>
-          <span>{props.name}</span>
-          <span>{props.price.toFixed(2)}</span>
+   
+   <div class="col s12 m7">
+    <div class="card horizontal">
+    
+        <div class="card-content">
+          <span>{props.item.brand}</span> <span>{props.item.title}</span> <span>{props.item.name}</span> <span>{props.item.price}</span>
         </div>
+        <div class="card-action">
+          <a href="#">ADD TO CART</a>
+        </div>
+    
+    </div>
+  </div>
+
 );
 
 Shoe.propTypes = {
@@ -16,5 +24,5 @@ Shoe.propTypes = {
   price: React.PropTypes.number.isRequired,
   onShoeSelect: React.PropTypes.func,
 };
-
+                                      
 export default Shoe;
