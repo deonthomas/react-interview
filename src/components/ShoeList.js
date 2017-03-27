@@ -7,7 +7,7 @@ const ShoeList = (props) => (
   	{	
   		props.shoes.map((shoeItem)=>
 	  	<li key={shoeItem.id}>
-	  		<Shoe {...shoeItem} />
+	  		<Shoe onShoeSelect={props.onShoeSelect}   {...shoeItem} />
 	  	</li>
   		)
   	}
