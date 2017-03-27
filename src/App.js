@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div>
 
-        <NavBar title="Hello World"/>
+        <NavBar title="Deon's Shoesle Shop"/>
        <CartSummary cart={this.state.cart}/>
         <div className="row">
           <div className="col s6">

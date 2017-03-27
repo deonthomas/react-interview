@@ -2,8 +2,8 @@ import React from 'react';
 
 const Shoe = (props) => (
  
-   <div class="col s12 m7">
-    <div class="card horizontal">
+   <div className="col m12 m7">
+    <div className="card horizontal">
     
        
         <div className="card-content">
@@ -12,7 +12,7 @@ const Shoe = (props) => (
           <span>{props.price.toFixed(2)}</span>
         </div>
 
-        <div class="card-action">
+        <div className="card-action">
           <a href="#">ADD TO CART</a>
         </div>
     
