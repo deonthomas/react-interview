@@ -34,7 +34,12 @@ class App extends Component {
   }
 
   handleShoeSelect (shoe) {
-
+    //todo: do better error handling
+    var myState = this.state;
+    myState.cart.push(shoe);
+    this.setState({
+      cart:myState.cart
+    });
   }
 
   render() {
