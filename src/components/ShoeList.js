@@ -2,7 +2,17 @@ import React from 'react';
 import Shoe from './Shoe';
 
 const ShoeList = (props) => (
-  <div>ShoeList</div>
+  <div>
+  	{
+  		props.shoes.map((shoeItem)=>
+  			<div>
+	  			<ul>
+	  				<Shoe/>
+	  			</ul>
+  			</div>	
+  		)
+  	}
+  </div>
 );
 
 ShoeList.propTypes = {

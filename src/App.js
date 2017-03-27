@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
 import ShoeList from './components/ShoeList';
+import Shoe from './components/Shoe';
 import Api from './api';
 
 
