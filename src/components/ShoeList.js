@@ -6,7 +6,7 @@ const ShoeList = (props) => (
   	<ul>
   	{	
   		props.shoes.map((shoeItem)=>
-	  	<li>
+	  	<li key={shoeItem.id}>
 	  		<Shoe {...shoeItem} />
 	  	</li>
   		)
