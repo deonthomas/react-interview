@@ -13,6 +13,9 @@ class App extends Component {
    * */
   constructor(props) {
     super(props);
+    this.state = {
+      shoes:[]
+    }
   }
 
   /**
@@ -20,8 +23,11 @@ class App extends Component {
    *  - Api.getShoes() returns a promise
    *  - this.setState() might be useful
    * */
-  componentDidMount() {
-
+    componentDidMount() {
+         Api.getShoes()
+        .then((list)=>{
+          this.setState({shoes:list});
+        });
   }
 
   handleShoeSelect (shoe) {
@@ -35,20 +41,9 @@ class App extends Component {
         <NavBar title="Hello World"/>
 
         <div className="row">
-
-          <div className="col s3">
-            I am the left pane
-          </div>
-
           <div className="col s6">
-            I am in the middle
+             <ShoeList shoes={this.state.shoes}/>
           </div>
-
-          <div className="col s3">
-            Right?
-          </div>
-          <ShoeList/>
-
         </div>
       </div>
 
