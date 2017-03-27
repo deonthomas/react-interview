@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar';
+import ShoeList from './components/ShoeList';
 import Api from './api';
+
 
 class App extends Component {
 
@@ -45,6 +47,7 @@ class App extends Component {
           <div className="col s3">
             Right?
           </div>
+          <ShoeList/>
 
         </div>
       </div>
