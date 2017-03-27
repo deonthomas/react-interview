@@ -1,9 +1,14 @@
 import React from 'react';
 
 const Shoe = (props) => (
-  <div>
-    Shoe
-  </div>
+ 
+   
+        <div className="card-content">
+          <span>{props.brand}</span>
+          <span>{props.title}</span>
+          <span>{props.name}</span>
+          <span>{props.price}</span>
+        </div>
 );
 
 Shoe.propTypes = {

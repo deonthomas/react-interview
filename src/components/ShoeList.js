@@ -7,7 +7,7 @@ const ShoeList = (props) => (
   		props.shoes.map((shoeItem)=>
   			<div>
 	  			<ul>
-	  				<Shoe/>
+	  				<Shoe item={shoeItem}/>
 	  			</ul>
   			</div>	
   		)
