@@ -3,15 +3,15 @@ import Shoe from './Shoe';
 
 const ShoeList = (props) => (
   <div>
-  	{
+  	<ul>
+  	{	
   		props.shoes.map((shoeItem)=>
-  			<div>
-	  			<ul>
-	  				<Shoe item={shoeItem}/>
-	  			</ul>
-  			</div>	
+	  	<li>
+	  		<Shoe {...shoeItem} />
+	  	</li>
   		)
   	}
+  	</ul>
   </div>
 );
 
