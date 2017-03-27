@@ -42,7 +42,7 @@ class App extends Component {
       <div>
 
         <NavBar title="Hello World"/>
-       <CartSummary />
+       <CartSummary cart={this.state.cart}/>
         <div className="row">
           <div className="col s6">
              <ShoeList shoes={this.state.shoes}/>
