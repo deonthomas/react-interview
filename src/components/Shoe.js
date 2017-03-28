@@ -1,11 +1,10 @@
 import React from 'react';
 
 const Shoe = (props) => (
- 
+
    <div className="col m12 m7">
     <div className="card horizontal">
-    
-       
+
         <div className="card-content">
           <span>{props.brand}</span>
           <span>{props.name}</span>
@@ -13,9 +12,9 @@ const Shoe = (props) => (
         </div>
 
         <div className="card-action">
-          <a href="#">ADD TO CART</a>
+        <a href="#" onClick={props.onShoeSelect.bind(this,{...props}) }>ADD TO CART</a>
         </div>
-    
+
     </div>
   </div>
 
@@ -27,5 +26,5 @@ Shoe.propTypes = {
   price: React.PropTypes.number.isRequired,
   onShoeSelect: React.PropTypes.func,
 };
-                                      
+
 export default Shoe;

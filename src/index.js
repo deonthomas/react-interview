@@ -6,6 +6,5 @@ import 'materialize-css/bin/materialize.css'
 import 'materialize-css/bin/materialize.js'
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+  <App />,document.getElementById('root')
 );

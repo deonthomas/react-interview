@@ -19,6 +19,7 @@ class App extends Component {
       shoes:[],
       cart:[]
     }
+    this.handleShoeSelect = this.handleShoeSelect.bind(this);
   }
 
   /**
@@ -35,18 +36,17 @@ class App extends Component {
 
   handleShoeSelect (shoe) {
     //todo: do better error handling
-    var myState = this.state;
-    myState.cart.push(shoe);
+   const mycart = this.state.cart;
+    mycart.push(shoe);
     this.setState({
-      cart:myState.cart
+      cart:mycart
     });
   }
 
   render() {
     return (
       <div>
-
-        <NavBar title="Deon's Shoesle Shop"/>
+      <NavBar title="Hello World"/>
        <CartSummary cart={this.state.cart}/>
         <div className="row">
           <div className="col s6">
@@ -54,8 +54,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-
-    );
+    )
   }
 }
 
