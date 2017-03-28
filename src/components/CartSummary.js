@@ -10,8 +10,9 @@ const CartSummary = (props) => {
    }
   return (
     <div className="CartSummary">
-      <span id="ItemCount">{props.cart.length}</span>
-      <span id="TotalCost">{price.toFixed(2)}</span>
+    <small> MY CART SUMMARY </small><br></br>
+      Count : <span id="ItemCount">{props.cart.length}</span><br></br>
+      Total Cost: <span id="TotalCost">{price.toFixed(2)}</span><br></br>
     </div>
   )
 };

@@ -17,5 +17,5 @@
  * @param key A string of the object property
  */
 export function countByKey (arr, key) {
-
+	return arr;
 }

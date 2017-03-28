@@ -1,19 +1,21 @@
 import React from 'react';
 import Shoe from './Shoe';
 
-const ShoeList = (props) => (
+const ShoeList = (props) => {
+  return(
   <div>
   	<ul>
   	{	
   		props.shoes.map((shoeItem)=>
 	  	<li key={shoeItem.id}>
-	  		<Shoe onShoeSelect={props.onShoeSelect}   {...shoeItem} />
+	  		<Shoe {...shoeItem} onShoeSelect={props.onShoeSelect}    />
 	  	</li>
   		)
   	}
   	</ul>
   </div>
-);
+  )
+}
 
 ShoeList.propTypes = {
   shoes: React.PropTypes.array.isRequired,
