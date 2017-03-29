@@ -3,15 +3,15 @@ import {countByKey} from '../utils';
 
 const Facet = (props) => (
 
-<div>
-<ul>
-{
-	countByKey(props.items,'brand').map((item)=>
-  		<li>{item.brand}</li>
-	)
-}
-	</ul>
-  </div>
+		<div>
+		<ul>
+		{
+			countByKey(props.items,'brand').map((item)=>
+		  		  <li>{item.brand} ({item.count})</li>
+			)
+		}
+			</ul>
+		  </div>
 );
 
 
