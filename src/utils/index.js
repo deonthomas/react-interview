@@ -16,6 +16,20 @@
  * @param arr An array of objects
  * @param key A string of the object property
  */
-export function countByKey (arr, key) {
-	return arr;
+export function countByKey (arr, brandKey) {
+	//TODO: Revisit this, must be better way to do this :-(
+	var stock = {};
+	for (var i = 0; i < arr.length; i++) {
+  		var brandName = arr[i].brand;
+  		if (!stock[brandName]) {
+    		stock[brandName] = [];
+  		}
+  		stock[brandName].push(arr[i].brand);
+	}
+
+	var tempArray = [];
+	for (var brandName in stock) {
+	  tempArray.push({brand: brandName, count: stock[brandName].length});
+	}
+	return tempArray;
 }
