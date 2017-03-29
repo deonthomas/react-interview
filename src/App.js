@@ -18,7 +18,7 @@ class App extends Component {
     this.state = {
       shoes:[],
       cart:[],
-      facetSleected:null
+      facetSelected:null
     }
     this.handleShoeSelect = this.handleShoeSelect.bind(this);
   }

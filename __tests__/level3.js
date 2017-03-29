@@ -74,8 +74,8 @@ describe('App', () => {
   });
 
   it('should have `state.facetSelected` that equals null', () => {
-    // WRITE THIS TEST!
-    return false;
+    const wrapper = shallow(<App/>);
+    expect(wrapper.state().facetSelected).toBeNull();
   });
 
   it('should have an instance method called `handleFacetSelect`', () => {
