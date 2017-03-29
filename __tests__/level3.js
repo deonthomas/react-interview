@@ -70,7 +70,7 @@ describe('Facet', () => {
 describe('App', () => {
   it('should contain a <Facet /> component', () => {
     const wrapper = shallow(<App/>);
-    expect(wrapper.find(<Facet items={mockShoes}/>).length).toEqual(1);
+    expect(wrapper.find(Facet).length).toEqual(1);
   });
 
   it('should have `state.facetSelected` that equals null', () => {
@@ -84,8 +84,14 @@ describe('App', () => {
   });
 
   it('the instance method should update `state.facetSelected`', () => {
-    // WRITE THIS TEST!
-    return false;
+   
+    const wrapper = shallow(<App/>);
+    expect(wrapper.state().facetSelected).toEqual(null);
+
+    var mockFacet = {brand: 'Nike', count: 2};
+
+    wrapper.instance().handleFacetSelect(mockFacet);
+    expect(wrapper.state().facetSelected).not.toBeNull();
   });
 
   it('the instance method should update `state.facetSelected` to null if a shoe is selected already (toggle off)', () => {

@@ -6,8 +6,8 @@ const Facet = (props) => (
 		<div>
 		<ul>
 		{
-			countByKey(props.items,'brand').map((item)=>
-		  		  <li>{item.brand} ({item.count})</li>
+			countByKey(props.items,'brand').map((item,index)=>
+		  		  <li key={index}>{item.brand} ({item.count})</li>
 			)
 		}
 			</ul>
