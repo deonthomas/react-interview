@@ -44,8 +44,8 @@ class App extends Component {
     });
   }
 
-  handleFacetSelect(){
-
+  handleFacetSelect(facet){
+    this.state.facetSelected = facet.onFacetSelect;
   }
 
   render() {
