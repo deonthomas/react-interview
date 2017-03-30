@@ -7,7 +7,7 @@ const Facet = (props) => (
 		<ul>
 		{
 			countByKey(props.items,'brand').map((item,index)=>
-		  		  <li  key={index}>{item.brand} ({item.count})</li>
+		  		  <li onClick={props.handleSelect} key={index}>{item.brand} ({item.count})</li>
 			)
 		}
 			</ul>

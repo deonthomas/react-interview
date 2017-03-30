@@ -45,29 +45,39 @@ class App extends Component {
   }
 
   handleFacetSelect(facet){
-    if(this.state.cart.length > 0){
+      if(this.state.cart.length > 0){
+        this.setState({
+          facetSelected:null
+        });
+      }else{
       this.setState({
-        facetSelected:null
-      });
-    }else{
-    this.setState({
-        facetSelected:facet.onFacetSelect
-      });
-  }
+          facetSelected:facet.onFacetSelect
+        });
+    }
   }
 
-  handleSelect(){}
+  handleSelect(facet){
+    console.log(facet);
+  }
 
   render() {
     return (
       <div>
       <NavBar title="Hello World"/>
-      <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} handleSelect={this.handleSelect} />
-       <CartSummary cart={this.state.cart}/>
-        <div className="row">
-          <div className="col s6">
-             <ShoeList shoes={this.state.shoes} onShoeSelect={this.handleShoeSelect}/>
+      <div className="row">
+
+          <div className="col s3">
+            <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} handleSelect={this.handleSelect} />
           </div>
+
+          <div className="col s6">
+            <ShoeList shoes={this.state.shoes} onShoeSelect={this.handleShoeSelect}/>
+          </div>
+
+          <div className="col s3">
+            <CartSummary cart={this.state.cart}/>
+          </div>
+
         </div>
       </div>
     )

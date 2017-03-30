@@ -110,12 +110,6 @@ describe('App', () => {
     const wrapper = shallow(<App/>);
     const facetProps = wrapper.find(Facet).props();
     expect(Object.keys(facetProps)).toContain('handleSelect');
-    
-  });
-
-  it('the list of shoes display should be filter based on the facet selected', () => {
-    // WRITE THIS TEST! THIS IS THE MAIN ONE
-    return false;
   });
 
   it('the list of shoes display should be filter based on the facet selected', () => {
