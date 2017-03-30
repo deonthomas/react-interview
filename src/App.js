@@ -33,9 +33,9 @@ class App extends Component {
         .then((list)=>{
           this.setState({shoes:list});
         });
-  }
+      }
 
-  handleShoeSelect (shoe) {
+     handleShoeSelect(shoe) {
     //todo: do better error handling
    const mycart = this.state.cart;
     mycart.push(shoe);
@@ -45,9 +45,15 @@ class App extends Component {
   }
 
   handleFacetSelect(facet){
+    if(this.state.cart.length > 0){
+      this.setState({
+        facetSelected:null
+      });
+    }else{
     this.setState({
-      facetSelected: facet.onFacetSelect
-    });
+        facetSelected:facet.onFacetSelect
+      });
+  }
   }
 
   render() {

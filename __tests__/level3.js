@@ -81,8 +81,9 @@ describe('App', () => {
   it('should have an instance method called `handleFacetSelect`', () => {
 
      const wrapper = shallow(<App/>);
-    expect( wrapper.instance().handleFacetSelect).not.toBeNull();
+    
     expect(wrapper.instance().handleFacetSelect).toBeInstanceOf(Function);
+    
   });
 
   it('the instance method should update `state.facetSelected`', () => {
@@ -90,16 +91,24 @@ describe('App', () => {
     expect(wrapper.state().facetSelected).toEqual(null);
     var mockFacet = {brand: 'Nike', count: 2};
     wrapper.instance().handleFacetSelect(mockFacet);
-    expect(wrapper.state().facetSelected).not.toBeNull();
+    expect(wrapper.state().facetSelected).not.toBeNull()
   });
 
   it('the instance method should update `state.facetSelected` to null if a shoe is selected already (toggle off)', () => {
-    // WRITE THIS TEST!
-    return false;
+    
+    const wrapper = shallow(<App/>);
+    wrapper.state().facetSelected = jest.fn(); 
+    wrapper.instance().handleShoeSelect(mockShoes[0]); 
+    
+    var mockFacet = {brand: 'Nike', count: 2};
+    wrapper.instance().handleFacetSelect(mockFacet);
+
+    expect(wrapper.state().facetSelected).toBeNull();    
   });
 
   it('the <Facet /> component should be passed `handleSelect` as a prop', () => {
-    // WRITE THIS TEST!
+    const wrapper = shallow(<Facet onFacetSelect={handleSelect}/>);
+    const props = wrapper.find(Facet).props;
     return false;
   });
 
