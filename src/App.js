@@ -44,10 +44,13 @@ class App extends Component {
     });
   }
 
+  handleFacetSelect(){
+
+  }
+
   render() {
     return (
       <div>
-      
       <NavBar title="Hello World"/>
       <Facet items={this.state.shoes}/>
        <CartSummary cart={this.state.cart}/>

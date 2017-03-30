@@ -79,17 +79,16 @@ describe('App', () => {
   });
 
   it('should have an instance method called `handleFacetSelect`', () => {
-    // WRITE THIS TEST!
-    return false;
+
+     const wrapper = shallow(<App/>);
+    expect( wrapper.instance().handleFacetSelect).not.toBeNull();
+    expect(wrapper.instance().handleFacetSelect).toBeInstanceOf(Function);
   });
 
   it('the instance method should update `state.facetSelected`', () => {
-   
     const wrapper = shallow(<App/>);
     expect(wrapper.state().facetSelected).toEqual(null);
-
     var mockFacet = {brand: 'Nike', count: 2};
-
     wrapper.instance().handleFacetSelect(mockFacet);
     expect(wrapper.state().facetSelected).not.toBeNull();
   });
