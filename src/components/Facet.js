@@ -7,7 +7,7 @@ const Facet = (props) => (
 		<ul>
 		{
 			countByKey(props.items,'brand').map((item,index)=>
-		  		  <li key={index}>{item.brand} ({item.count})</li>
+		  		  <li  key={index}>{item.brand} ({item.count})</li>
 			)
 		}
 			</ul>
@@ -17,7 +17,8 @@ const Facet = (props) => (
 
 Facet.propTypes = {
   items: React.PropTypes.array.isRequired,
-  onFacetSelect: React.PropTypes.func
+  onFacetSelect: React.PropTypes.func,
+  handleSelect:React.PropTypes.func
 };
 
 export default Facet;

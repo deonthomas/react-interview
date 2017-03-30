@@ -56,11 +56,13 @@ class App extends Component {
   }
   }
 
+  handleSelect(){}
+
   render() {
     return (
       <div>
       <NavBar title="Hello World"/>
-      <Facet items={this.state.shoes}/>
+      <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} handleSelect={this.handleSelect} />
        <CartSummary cart={this.state.cart}/>
         <div className="row">
           <div className="col s6">
