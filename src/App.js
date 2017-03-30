@@ -45,7 +45,10 @@ class App extends Component {
   }
 
   handleFacetSelect(facet){
-    this.state.facetSelected = facet.onFacetSelect;
+    const mycart = this.state.facetSelected;
+    this.setState({
+      facetSelected:facet.onFacetSelect
+    });
   }
 
   render() {
