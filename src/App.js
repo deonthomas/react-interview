@@ -66,7 +66,7 @@ class App extends Component {
       <NavBar title="Hello World"/>
       <div className="row">
 
-          <div className="col s3">
+        <div className="col s3">
             <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} handleSelect={this.handleSelect} />
           </div>
 

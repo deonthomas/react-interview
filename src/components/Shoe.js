@@ -7,9 +7,9 @@ const Shoe = (props) => {
       <div className="card horizontal">
 
           <div className="card-content">
-            <span>{props.brand}</span>
-            <span>{props.name}</span>
-            <span>{props.price.toFixed(2)}</span>
+            <span className="cart-item-brand">{props.brand}</span>
+            <span className="cart-item-name">{props.name}</span>
+            <span className="cart-item-price">{props.price.toFixed(2)}</span>
           </div>
 
           <div className="card-action">

@@ -10,9 +10,9 @@ const CartSummary = (props) => {
    }
   return (
     <div className="CartSummary">
-    <small> MY CART SUMMARY </small><br></br>
-      Count : <span id="ItemCount">{props.cart.length}</span><br></br>
-      Total Cost: <span id="TotalCost">{price.toFixed(2)}</span><br></br>
+      <small> MY CART SUMMARY </small><br></br>
+        Count : <span id="ItemCount">{props.cart.length}</span><br></br>
+        Total Cost: <span className="cart-total" id="TotalCost">{price.toFixed(2)}</span><br></br>
     </div>
   )
 };

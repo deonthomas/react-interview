@@ -77,7 +77,7 @@ describe('ShoeList', () => {
   it('should pass `props.onShoeSelect` to each <Shoe />', () => {
     const wrapper = shallow(<ShoeList shoes={mockShoes} onShoeSelect={() => jest.fn()}/>);
     expect(wrapper.find(Shoe).first().props().onShoeSelect).not.toBeUndefined();
-   // expect(wrapper.find(Shoe).first().props().onShoeSelect).toBeInstanceOf(Function);
+    expect(wrapper.find(Shoe).first().props().onShoeSelect).toBeInstanceOf(Function);
   });
 
 });
@@ -92,15 +92,16 @@ describe('Shoe', () => {
     expect(wrapper.find('a').length).toEqual(1);
   });
 
- it('should call `props.onFacetSelect` when clicking on an <li>', () => {
-    const clickSpy = jest.fn();
-    const wrapper = shallow(<Facet items={mockShoes} onFacetSelect={clickSpy}/>);
-    const element = wrapper.find('li').first();
-    expect(clickSpy).not.toHaveBeenCalled();
-    element.simulate('click');
-    expect(clickSpy.mock.calls.length).toEqual(1)
-      brand: expect.any(String),
-      count: expect.any(Number)
+  describe('when clicking the button', () => {
+    it('should call the function passed in to `props.onShoeSelect` with the shoe as the first arg', () => {
+      const selectSpy = jest.fn();
+      const wrapper = shallow(<Shoe {...mockShoe} onShoeSelect={selectSpy}/>);
+      const button = wrapper.find('a').first();
+      expect(selectSpy.mock.calls.length).toEqual(0);
+
+      button.simulate('click');
+      expect(selectSpy.mock.calls.length).toEqual(1);
+      expect(selectSpy.mock.calls[0][0]).toEqual(expect.objectContaining(mockShoe));
     });
   })
 })
