@@ -8,11 +8,6 @@ import Api from './api';
 
 class App extends Component {
 
-  /**
-   * TIP:
-   *  - this.state = {...}
-   *  - this.someFunction = this.someFunction.bind(this)
-   * */
   constructor(props) {
     super(props);
     this.state = {
@@ -21,22 +16,18 @@ class App extends Component {
       facetSelected:null
     }
     this.handleShoeSelect = this.handleShoeSelect.bind(this);
+    this.handleFacetSelect = this.handleFacetSelect.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
-  /**
-   * TIP:
-   *  - Api.getShoes() returns a promise
-   *  - this.setState() might be useful
-   * */
-    componentDidMount() {
+  componentDidMount() {
          Api.getShoes()
         .then((list)=>{
           this.setState({shoes:list});
         });
-      }
+   }
 
-     handleShoeSelect(shoe) {
-    //todo: do better error handling
+  handleShoeSelect(shoe) {
    const mycart = this.state.cart;
     mycart.push(shoe);
     this.setState({

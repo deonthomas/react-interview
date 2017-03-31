@@ -10,7 +10,7 @@ const CartSummary = (props) => {
    }
   return (
     <div className="CartSummary">
-      <h1>MY CART SUMMARY</h1>
+      <medium>MY CART SUMMARY</medium>
       <div>
         Count : <span id="ItemCount">{props.cart.length}</span><br></br>
         Total Cost: <span className="cart-total" id="TotalCost">{price.toFixed(2)}</span>
