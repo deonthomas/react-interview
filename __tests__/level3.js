@@ -54,16 +54,15 @@ describe('Facet', () => {
     expect(wrapper.find('li').last().text()).toEqual('Adidas (1)');
   });
 
-   it('[x]should call `props.onFacetSelect` when clicking on an <li>', () => {
-    // const clickSpy = jest.fn();
-    // const wrapper = shallow(<Facet items={mockShoes} onFacetSelect={clickSpy}/>);
-    // const element = wrapper.find('li').first();
-    // expect(clickSpy).not.toHaveBeenCalled();
-    // element.simulate('click');
-    // expect(clickSpy).toHaveBeenCalledWith(expect.objectContaining({
-    //   brand: expect.any(String),
-    //   count: expect.any(Number)
-    // }));
+  describe('when clicking the button', () => {
+    it('should call `props.onFacetSelect` when clicking on an <li>', () => {
+    const clickSpy = jest.fn();
+    const wrapper = shallow(<Facet items={mockShoes} onFacetSelect={clickSpy}/>);
+    const element = wrapper.find('li').first();
+    expect(clickSpy.mock.calls.length).toEqual(0);
+    element.simulate('click');
+    expect(clickSpy.mock.calls.length).toEqual(1);
+    });
   })
 });
 
@@ -81,9 +80,9 @@ describe('App', () => {
   it('should have an instance method called `handleFacetSelect`', () => {
 
      const wrapper = shallow(<App/>);
-    
+
     expect(wrapper.instance().handleFacetSelect).toBeInstanceOf(Function);
-    
+
   });
 
   it('the instance method should update `state.facetSelected`', () => {
@@ -95,15 +94,15 @@ describe('App', () => {
   });
 
   it('the instance method should update `state.facetSelected` to null if a shoe is selected already (toggle off)', () => {
-    
+
     const wrapper = shallow(<App/>);
-    wrapper.state().facetSelected = jest.fn(); 
-    wrapper.instance().handleShoeSelect(mockShoes[0]); 
-    
+    wrapper.state().facetSelected = jest.fn();
+    wrapper.instance().handleShoeSelect(mockShoes[0]);
+
     var mockFacet = {brand: 'Nike', count: 2};
     wrapper.instance().handleFacetSelect(mockFacet);
 
-    expect(wrapper.state().facetSelected).toBeNull();    
+    expect(wrapper.state().facetSelected).toBeNull();
   });
 
   it('the <Facet /> component should be passed `handleSelect` as a prop', () => {

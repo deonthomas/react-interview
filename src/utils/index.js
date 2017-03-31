@@ -15,7 +15,7 @@
  *    ]
  * @param arr An array of objects
  * @param key A string of the object property
- */
+ */		
 export function countByKey (arr, brandKey) {
 	//TODO: Revisit this, must be better way to do this :-(
 	var stock = {};
