@@ -36,15 +36,9 @@ class App extends Component {
   }
 
   handleFacetSelect(facet){
-      if(this.state.cart.length > 0){
         this.setState({
-          facetSelected:null
+          facetSelected: (this.state.cart.length > 0 ? null : facet.onFacetSelect)
         });
-      }else{
-      this.setState({
-          facetSelected:facet.onFacetSelect
-        });
-    }
   }
 
   handleSelect(facet){
@@ -54,7 +48,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <NavBar title="My ShoeStore App"/>
+      <NavBar title="My ShoeStore "/>
       <div className="row">
 
         <div className="col s3">
