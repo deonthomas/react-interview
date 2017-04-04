@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import App from '../src/App';
-import ShoeList from '../src/components/ShoeList';  
+import ShoeList from '../src/components/ShoeList';
 import Shoe from '../src/components/Shoe';
 import CartSummary from '../src/components/CartSummary';
 

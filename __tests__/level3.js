@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Facet from '../src/components/Facet';
+import ShoeList from '../src/components/ShoeList';
 import App from '../src/App';
 import {countByKey} from '../src/utils';
 
@@ -105,14 +106,16 @@ describe('App', () => {
     expect(wrapper.state().facetSelected).toBeNull();
   });
 
-  it('the <Facet /> component should be passed `handleSelect` as a prop', () => {
+  it('the <Facet /> component should be passed `onFacetSelect` as a prop', () => {
     const wrapper = shallow(<App/>);
     const facetProps = wrapper.find(Facet).props();
-    expect(Object.keys(facetProps)).toContain('handleSelect');
+    expect(Object.keys(facetProps)).toContain('onFacetSelect');
   });
 
   it('the list of shoes display should be filter based on the facet selected', () => {
-    // WRITE THIS TEST! THIS IS THE MAIN ONE
-    return false;
+    //simulate click on facet
+
+    //check displayed list
+      return false;
   });
 });

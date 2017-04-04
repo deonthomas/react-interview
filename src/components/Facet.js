@@ -8,7 +8,7 @@ return(
 				<ul >
 						{
 							countByKey(props.items,'brand').map((item,index)=>
-				  		  <li className="chip" onClick={props.onFacetSelect}
+				  		  <li className="chip" onClick={()=>props.onFacetSelect(item)}
 									key={index}>{item.brand} ({item.count})
 								</li>)
 						}
@@ -18,8 +18,7 @@ return(
 
 Facet.propTypes = {
   items: React.PropTypes.array.isRequired,
-  onFacetSelect: React.PropTypes.func,
-  handleSelect:React.PropTypes.func
+  onFacetSelect: React.PropTypes.func
 };
 
 export default Facet;

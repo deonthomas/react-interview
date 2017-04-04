@@ -12,18 +12,18 @@ class App extends Component {
     super(props);
     this.state = {
       shoes:[],
+      tmpShoeList:[],
       cart:[],
       facetSelected:null
     }
     this.handleShoeSelect = this.handleShoeSelect.bind(this);
     this.handleFacetSelect = this.handleFacetSelect.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
          Api.getShoes()
         .then((list)=>{
-          this.setState({shoes:list});
+          this.setState({tmpShoeList:list, shoes:list});
         });
    }
 
@@ -36,13 +36,18 @@ class App extends Component {
   }
 
   handleFacetSelect(facet){
-        this.setState({
-          facetSelected: (this.state.cart.length > 0 ? null : facet.onFacetSelect)
-        });
-  }
-
-  handleSelect(facet){
+    //fix shared state problems
     console.log(facet);
+    this.setState({
+      facetSelected: (this.state.cart.length > 0 ? null : facet.onFacetSelect)
+    });
+
+    Api.getShoes()
+    .then((list)=>{
+      this.setState({
+        shoes: list.filter((item)=> item.brand === facet.brand)
+      });
+    });
   }
 
   render() {
@@ -50,19 +55,15 @@ class App extends Component {
       <div>
       <NavBar title="My ShoeStore "/>
       <div className="row">
-
         <div className="col s3">
-            <Facet items={this.state.shoes} onFacetSelect={this.handleFacetSelect} handleSelect={this.handleSelect} />
+            <Facet items={this.state.tmpShoeList} onFacetSelect={this.handleFacetSelect} />
           </div>
-
           <div className="col s6">
             <ShoeList shoes={this.state.shoes} onShoeSelect={this.handleShoeSelect}/>
           </div>
-
           <div className="col s3">
             <CartSummary cart={this.state.cart}/>
           </div>
-
         </div>
       </div>
     )
