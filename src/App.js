@@ -54,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <NavBar title="Hello World"/>
+      <NavBar title="My ShoeStore App"/>
       <div className="row">
 
         <div className="col s3">
